@@ -1,0 +1,20 @@
+/* Remove browser default value */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /* inherit from body, best practice than putting it directly here */
+}
+
+html {
+    /* set the root font-size to 62.5% (NOT IN PIXELS) to let the ability to the browser (or the user by browser configuration
+       to set the font size default value (that is usually 16px)... We want 10px here as a REM base so 62.5 of 16px(default value) = 10px...
+       All rem in the CSS is based on this value and easy to calculate */
+    font-size: 62.5%; // define what 1 rem is
+}
+
+/* Affect globally */
+body {
+    box-sizing: border-box;
+}
