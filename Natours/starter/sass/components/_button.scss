@@ -8,7 +8,7 @@
         border-radius: 10rem; /* Round corners on button */
         transition: all .2s; /* Determine time for all actions effect (hover, active, etc), must be on initial state (link in this case) */
         position: relative;
-        font-size: 1.6rem;
+        font-size: $default-font-size;
     }
     
     &:hover {
@@ -51,5 +51,30 @@
     &--animated {
         animation: moveInBottom 0.5s ease-out .75s; 
         animation-fill-mode: backwards; /* set element to animation initial state until end of delay is reached (.75s in this case) */
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px; // When small values like 1px or 3px, it's ok to not use rem cause it will probably translate to the same value
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.15);
+        transform: translateY(0);
     }
 }
