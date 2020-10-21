@@ -11,7 +11,19 @@ html {
     /* set the root font-size to 62.5% (NOT IN PIXELS) to let the ability to the browser (or the user by browser configuration
        to set the font size default value (that is usually 16px)... We want 10px here as a REM base so 62.5 of 16px(default value) = 10px...
        All rem in the CSS is based on this value and easy to calculate */
-    font-size: 62.5%; // define what 1 rem is
+    font-size: 62.5%; // define what 1 rem is  (1rem = 10px)
+
+    @include respond(tab-land) { // width < 1200px
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) { // width < 900px
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px, 10/16 = 75%
+    }
 }
 
 /* Affect globally */

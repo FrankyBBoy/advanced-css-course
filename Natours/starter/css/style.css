@@ -1,3 +1,22 @@
+/*
+0 - 600px:    Phone
+600 - 900px:  Tablet Portrait
+900 - 1200px: Tablet Landscape
+
+[1200 - 1800px]: Normal styles (desktop)
+
+1800px +: Big desktop
+*/
+/*
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+In media queries, it's better to use EM instead of REM
+1em = 16px (browser default)
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -40,6 +59,15 @@ html {
        to set the font size default value (that is usually 16px)... We want 10px here as a REM base so 62.5 of 16px(default value) = 10px...
        All rem in the CSS is based on this value and easy to calculate */
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 /* Affect globally */
 body {
